@@ -11,7 +11,8 @@ class AddToCalendarController < ApplicationController
     calendar.publish
 
     issues.each do |issue|
-      calendar.add_event(issue_event(issue))
+      event = issue_event(issue)
+      calendar.add_event(event)
     end
 
     send_data calendar.to_ical, type: :ics, filename: 'issue_events.ics'
@@ -20,21 +21,12 @@ class AddToCalendarController < ApplicationController
   private
 
   def issue_event(issue)
-    event = Icalendar::Event.new
-
-    event.dtstart = icalendar_date(issue.start_date) if issue.start_date
-    event.dtend = icalendar_date(issue.due_date) if issue.due_date
-
-    event.summary = issue.subject
-    event.url = issue_url(issue)
-
-    # event.alarm do |a|
-    #   a.action = 'DISPLAY'
-    #   a.summary = issue.subject
-    #   a.trigger = '-P1D'
-    # end
-
-    event
+    Icalendar::Event.new.tap do |e|
+      e.dtstart = icalendar_date(issue.start_date) if issue.start_date
+      e.dtend = icalendar_date(issue.due_date) if issue.due_date
+      e.summary = issue.subject
+      e.url = issue_url(issue)
+    end
   end
 
   def icalendar_date(date)

@@ -2,13 +2,22 @@
 
 Redmine plugin for adding issue to Calendar as event.
 
-## Description
+![Click "Add to Calendar" button in context menu of issues](http://art21.photozou.jp/pub/683/3135683/photo/213770488_org.v1415084013.png)
 
-TODO
+Click `Add to Calendar` button in context-menu of issues.
 
-## Usage
+![issue_events.ics file will be downloaded](http://art21.photozou.jp/pub/683/3135683/photo/213770493_org.v1415084021.png)
 
-TODO
+`issue_events.ics` file will be downloaded.
+
+## Planned Features
+
+  * Timezone by user preference
+  * User settings
+    * Event time
+    * Alarm rule
+
+Please see Issues and Milestones for further details.
 
 ## Installation
 

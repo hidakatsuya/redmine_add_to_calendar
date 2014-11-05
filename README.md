@@ -1,5 +1,7 @@
 # Redmine Add to Calendar plugin
 
+[![Build Status](http://img.shields.io/travis/hidakatsuya/redmine_add_to_calendar.svg?style=flat)](https://travis-ci.org/hidakatsuya/redmine_add_to_calendar)
+
 Redmine plugin for adding issue to Calendar as event.
 
 ![Click "Add to Calendar" button in context menu of issues](http://art21.photozou.jp/pub/683/3135683/photo/213770488_org.v1415084013.png)

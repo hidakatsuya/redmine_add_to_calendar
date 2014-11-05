@@ -7,6 +7,9 @@ rvm:
 env:
   - REDMINE_REPOS=branches/2.6-stable
 
+gemfile:
+  - $REDMINE_PATH/Gemfile
+
 before_install:
   - export PLUGIN_NAME=redmine_add_to_calendar
   - export DB=sqlite

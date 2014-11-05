@@ -21,9 +21,17 @@ Please see Issues and Milestones for further details.
 
 ## Installation
 
+`git clone` to `REDMINE/plugins`.
+
     $ git clone https://github.com/hidakatsuya/redmine_add_to_calendar.git REDMINE/plugins
 
-Then restart Redmine.
+Or, get this plugin from [here](https://github.com/hidakatsuya/redmine_add_to_calendar/releases).
+
+Then, bundle install in Redmine directory:
+
+    $ bundle install
+
+Finally, restart Redmine.
 
 ## Uninstallation
 
@@ -33,6 +41,10 @@ Remove `REDMINE/plugins/redmine_add_to_calendar`, then restart Redmine.
 
   * Redmine 2.6 or higher
   * Ruby 2.1.3
+
+## Requirements
+
+  * icalendar 2.0 or higher
 
 ## Copyright
 

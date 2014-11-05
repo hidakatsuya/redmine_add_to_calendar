@@ -1,0 +1,24 @@
+language: ruby
+
+rvm:
+  - 1.9.3
+  - 2.1.3
+
+env:
+  - REDMINE_REPOS=branches/2.6-stable
+
+before_install:
+  - export PLUGIN_NAME=redmine_add_to_calendar
+  - export DB=sqlite
+  - export NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - export REDMINE_PATH=$HOME/redmine
+  - svn co http://svn.redmine.org/redmine/$REDMINE_REPOS $REDMINE_PATH
+  - ln -s $TRAVIS_BUILD_DIR $REDMINE_PATH/plugins/$PLUGIN_NAME
+  - cp config/database.travis.yml $REDMINE_PATH/config/database.yml
+  - cd $REDMINE_PATH
+
+before_script:
+  - bundle exec rake db:migrate
+
+script:
+  - bundle exec rake redmine:plugins:test NAME=$PLUGIN_NAME

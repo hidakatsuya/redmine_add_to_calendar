@@ -12,10 +12,13 @@ Click `Add to Calendar` button in context-menu of issues.
 
 `issue_events.ics` file will be downloaded.
 
-## Planned Features
+## Planned Features (>= 0.0.3)
 
-  * Timezone by user preference
-  * User settings
+  * #5 Access control
+    * Public project issues: All users with anonymous
+    * Private project issues: Project member with `view_issues` permission
+  * #4 Timezone by user preference
+  * #3 User settings
     * Event time
     * Alarm rule
 

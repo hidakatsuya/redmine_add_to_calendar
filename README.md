@@ -41,8 +41,10 @@ Remove `REDMINE/plugins/redmine_add_to_calendar`, then restart Redmine.
 
 ## Supported versions
 
-  * Redmine 2.6 or higher
-  * Ruby 2.1.3
+  * Redmine 2.3 or higher
+  * Ruby 1.9.3, 2.1.3
+
+See [build result of TravisCI](https://travis-ci.org/hidakatsuya/redmine_add_to_calendar) for further details.
 
 ## Requirements
 

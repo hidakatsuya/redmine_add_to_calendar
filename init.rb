@@ -3,7 +3,7 @@ Redmine::Plugin.register :redmine_add_to_calendar do
   author 'Katsuya Hidaka'
   description 'Redmine plugin for adding issue to Calendar as event'
   version '0.0.1'
-  requires_redmine '2.6'
+  requires_redmine '2.3'
   url 'https://github.com/hidakatsuya/redmine_add_to_calendar'
   author_url 'https://twitter.com/hidakatsuya'
 end

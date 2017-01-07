@@ -1,6 +1,6 @@
 require File.expand_path('../../test_helper', __FILE__)
 
-class AddToCalendarTest < ActionController::IntegrationTest
+class AddToCalendarTest < Redmine::IntegrationTest
   fixtures :projects,
            :users,
            :roles,
@@ -46,13 +46,13 @@ class AddToCalendarTest < ActionController::IntegrationTest
     get add_issues_to_calendar_path(ids: [issue.id])
 
     assert_response :success
-    assert_equal response.body, ' '
+    assert_equal true, response.body.blank?
   end
 
   test 'multiple issues' do
     issue6 = Issue.find(6)
     issue7 = Issue.find(7)
-    # both start_date and due_date is not set 
+    # both start_date and due_date is not set
     issue8 = Issue.find(8)
 
     get add_issues_to_calendar_path(ids: [6, 7, 8])
